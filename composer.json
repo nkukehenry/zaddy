@@ -1,0 +1,8 @@
+{
+"name":"splintug/cashawometeor",
+"description":"The cashawo engine",    
+"require": {
+        "peppeocchi/php-cron-scheduler": "^4.0"
+    },
+   "license": "GPL-2.0-or-later"
+}

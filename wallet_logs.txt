@@ -1,0 +1,17 @@
+
+
+=========SYSTEM OUTGOING PAYMENT 2021-10-20 10:06:15 =========
+
+{"itemCode":null,"paymentCode":"LOAD","customerId":"BG10003","amount":"1000","surcharge":0,"phoneNumber":null,"narration":"fff","agentId":"BG10003","requestRef":"LD1634756775","transactionRef":"BG10003|1000|LOAD","customerName":"Henry Nkuke","token":null,"refferalCode":null,"otp":null,"customerPhone":"","impact":"1000"}
+
+=========SYSTEM INCOMING PAYMENT RESPONSE 2021-10-20 10:06:15 =========
+
+{"transferCode":"LD1634756775","requestReference":"LD1634756775","transactionRef":null,"rechargePIN":"Load successful","responseCode":"9000","responseMessage":"SUCCESSFUL","amount":null}
+
+=========SYSTEM OUTGOING PAYMENT 2021-10-20 10:06:43 =========
+
+{"itemCode":null,"paymentCode":"LOAD","customerId":"BG10003","amount":"1000","surcharge":0,"phoneNumber":null,"narration":"fff","agentId":"BG10003","requestRef":"LD1634756803","transactionRef":"BG10003|1000|LOAD","customerName":"Henry Nkuke","token":null,"refferalCode":null,"otp":null,"customerPhone":"","impact":"1000"}
+
+=========SYSTEM INCOMING PAYMENT RESPONSE 2021-10-20 10:06:43 =========
+
+{"transferCode":"LD1634756803","requestReference":"LD1634756803","transactionRef":null,"rechargePIN":"Load successful","responseCode":"9000","responseMessage":"SUCCESSFUL","amount":null}
