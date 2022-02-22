@@ -53,7 +53,7 @@
 
                                               <div class="form-group form-float">
                                                 <div class="form-line">
-                                                    <input type="text" class="form-control"  autocomplete="off" name="username" value="<?php echo (count($login)>0)?$login->username:$agent->agentNo; ?>">
+                                                    <input type="text" class="form-control"  autocomplete="off" name="username" value="<?php echo ($login && count($login)>0)?$login->username:$agent->agentNo; ?>">
                                                     <label class="form-label" required>Username</label>
                                                 </div>
                                             </div>

@@ -49,7 +49,8 @@
  														$active="";
                                                         $inactive="";
                                                         $res="";
-														($agent->status=="1")?$active="selected":($agent->status=="2")?$res="selected":$inactive="selected";
+														$active   = ($agent->status=="1")?"selected":"";
+														$inactive = ($agent->status=="2")?"selected":"";
                                                            
                                                     ?>
                                                         <option value="1" <?=$active?> >Active</option>

@@ -63,8 +63,8 @@ class Agents extends MX_Controller {
 		$data['module']=$this->module;
 		$data['view']="edit_agent";
 		$data['page']="Edit Agent";
-		$data['agent']=$this->getAgent($agentNo);
-		echo Modules::run("templates/admin",$data);
+		$data['agent']=  ($this->getAgent($agentNo))?$this->getAgent($agentNo): ((Object)[]);
+      echo Modules::run("templates/admin",$data);
 	}
 
    public function createLogin($agentNo){
@@ -73,7 +73,7 @@ class Agents extends MX_Controller {
 		$data['page']="Create Agent Login";
 		$agent = $this->getAgent($agentNo);;
 		$data['agent']=$agent;
-		$data['login'] =$this->getUser($agent->phoneNumber);
+		$data['login'] = ($this->getUser($agent->phoneNumber))?$this->getUser($agent->phoneNumber):[];
 		echo Modules::run("templates/admin",$data);
 	}
 
