@@ -9,18 +9,13 @@ class PaymentResponse {
 	private $rechargePIN;
 	private $responseCode;
 	private $responseMessage;
-    private $amount;
 
     public function setFromJSON($jsonArray){
 
 		   foreach($jsonArray as $key=>$value){
 		      $this->$key = $value;
-           
-           if($key=='amount') //returned amount is always *100
-              $this->$key == $value/100;
-           
 		   }
-			
+
 		   return $this;
      }
 
@@ -36,10 +31,6 @@ class PaymentResponse {
 	  	 $this->responseMessage=$msg;
 	  }
 
-      public function setResponseCode($code){
-	  	 $this->$responseCode=$code;
-	  }
-
 
 	public function getRechargePIN(){
 	  	 return $this->rechargePIN;
@@ -51,10 +42,6 @@ class PaymentResponse {
 
 	  public function getRequestRef(){
 	  	 return $this->requestReference;
-	  }
-
-      public function getAmount(){
-	  	 return $this->amount;
 	  }
 
 	  public function expose() {

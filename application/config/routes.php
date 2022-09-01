@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') or exit('No direct script access allowed');
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------------
@@ -52,6 +52,8 @@ defined('BASEPATH') or exit('No direct script access allowed');
 $route['default_controller'] = 'auth/admin';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-$route['api/callbacks/ellypay'] = "ellypay/handleCallback";
-$route['team'] = "auth/retruiterLogin";
-$route['manage'] = "auth/admin";
+$route['merchant']="user/merchant";
+$route['login']="auth/merchant";
+$route['admin']="auth/admin";
+$route['merchantBillers/(:any)/(:any)']="user/merchantBillers/$1/$2";
+$route['eService/(:any)']="user/user/merchantForm/$1";

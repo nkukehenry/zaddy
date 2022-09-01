@@ -14,9 +14,6 @@ class PaymentRequest {
 	private $requestRef;
 	private $transactionRef;
 	private $customerName;
-	private $token;
-    private $refferalCode;
-    private $otp;
 
     public function setFromJSON($jsonArray){
 
@@ -29,12 +26,6 @@ class PaymentRequest {
 
 	  public function getItemCode(){
 	  	 return $this->itemCode;
-	  }
-      public function getOtp(){
-	  	 return $this->otp;
-	  }
-      public function getReferralCode(){
-	  	 return $this->refferalCode;
 	  }
 
 	  public function getPaymentCode(){
@@ -75,32 +66,22 @@ class PaymentRequest {
 	  public function getPaymentRef(){
 	  	  return $this->transactionRef;
 	  }
-
+	 
 	  public function getCustomerName(){
 	  	return $this->customerName;
 	  }
-		public function getToken(){
-	  	return $this->token;
-	  }
-
+	  
 	  public function setAgentId($agentId){
 	  	$this->agentId=$agentId;
-	  }
-		public function setToken($token){
-	  	$this->token=$token;
-	  }
-
-		public function setAmount($amount){
-	  	$this->amount=$amount;
 	  }
 
 
 	  public function expose() {
       return get_object_vars($this);
     }
+	  
 
-
-
+ 
 }
 
 ?>

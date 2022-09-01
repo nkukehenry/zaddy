@@ -4,7 +4,7 @@ class ValidationResponse {
 
 	private $customerName;
 	private $responseCode;
-    private $responseMessage='';
+  private $responseMessage='';
 	private $biller;
 	private $excise;
 	private $surchargeType;
@@ -12,7 +12,7 @@ class ValidationResponse {
 	private $isAmountFixed;
 	private $paymentItemId;
 	private $amount;
-    private $surcharge;
+  private $surcharge;
 	private $shortTransactionRef;
 	private $paymentItem;
 	private $balance;
@@ -29,10 +29,6 @@ class ValidationResponse {
 	   }
 
 	   return $this;
-  }
-
-	public function setSurcharge($charges){
-     $this->surcharge = $charges;
   }
 
   public function getCustomerName(){
@@ -72,12 +68,6 @@ class ValidationResponse {
   public function getBalanceType(){
   	return $this->balanceType;
   }
-  public function setBalanceType($balType){
-  	$this->balanceType = $balType;
-  }
-  public function setSurchargeType($surchargeType){
-  	$this->surchargeType = $surchargeType;
-  }
   public function getDisplayBalance(){
   	return $this->displayBalance;
   }
@@ -86,7 +76,7 @@ class ValidationResponse {
     return get_object_vars($this);
  }
 
-
+ 
 }
 
 ?>

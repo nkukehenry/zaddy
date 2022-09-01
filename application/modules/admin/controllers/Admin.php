@@ -15,9 +15,9 @@ class Admin extends MX_Controller {
 	
 	public function index()
 	{
-		//$this->load->view('sign_in');
+		$this->load->view('sign_in');
 		//$this->in();
-        Modules::run("reports/index");
+       // Modules::run("reports/index");
 	}
 
 public function in()
