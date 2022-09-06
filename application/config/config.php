@@ -17,7 +17,7 @@ error_reporting(0);
                define("EZEE_USERNAME","4295432316");
 		define("EZEE_PASSWORD","6444CF2846");
 		define("EZEE_CODE","40023841 ");
-		define("AGENT_PREFIX","ZAD");
+		define("AGENT_PREFIX","JAB");
 
 		//wallet configs
 		define("APP_KEY","HTTP_APP_KEY");
