@@ -79,21 +79,21 @@ class Agents extends MX_Controller {
 
     public function saveAgentLogin($agentNo){
 
-        $userdata=$this->input->post();
+        $userdata = $this->input->post();
 
-        $username=$userdata['username'];
+        $username = $userdata['username'];
 
-        $user=$this->getUser($username);
+        $user = $this->getUser($username);
 
-        if(count($user)>0)
+        if($user && count($user)>0)
         {
 
-					$userdata['password']=md5($userdata['password']);
-					$userdata['userType']='1';
-					$userdata['status']='1';
+			$userdata['password']=md5($userdata['password']);
+			$userdata['userType']='1';
+			$userdata['status']='1';
 
-					$this->db->where('user_id',$user->user_id);
-					$this->db->update('users',$userdata);
+			$this->db->where('user_id',$user->user_id);
+			$this->db->update('users',$userdata);
 
             redirect('agents/list');
         }
@@ -117,8 +117,8 @@ class Agents extends MX_Controller {
 
    function getUser($username){
 
-        $this->db->where('username',$username);
-       $qry= $this->db->get('users');
+         $this->db->where('username',$username);
+         $qry= $this->db->get('users');
 
         return $qry->row();
 
