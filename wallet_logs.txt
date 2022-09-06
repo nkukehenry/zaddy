@@ -1084,3 +1084,102 @@
  HEADERS OUT ["Authorization:InterswitchAuth SUtJQTBFOUI0MjY5QjM2NUQ1MTZCNzQwNUY0RDhBQjlGMEVGQTZEM0I3RDY=","Timestamp:1596161167","Nonce:5f237c8f63ba6","Signature:y1p+bUmFs793vlZf6cribU4YF5fcZYmTN1NaFbDJehc=","SignatureMethod:SHA-256","TerminalId:3ELI0001","Content-Type: application\/json"]
  HEADERS OUT ["Authorization:InterswitchAuth SUtJQTBFOUI0MjY5QjM2NUQ1MTZCNzQwNUY0RDhBQjlGMEVGQTZEM0I3RDY=","Timestamp:1596552044","Nonce:5f29736c7bde8","Signature:0r4w1OSXkM\/zne+bio0EAkC9EhcoYHflIECaBbwYWsU=","SignatureMethod:SHA-256","TerminalId:3ELI0001","Content-Type: application\/json"]
  HEADERS OUT ["Authorization:InterswitchAuth SUtJQTBFOUI0MjY5QjM2NUQ1MTZCNzQwNUY0RDhBQjlGMEVGQTZEM0I3RDY=","Timestamp:1596552072","Nonce:5f297388ba878","Signature:5v6IEMNtMX6C+NjvYN7zVfqhcC3xTz66xuv3IP7LjkM=","SignatureMethod:SHA-256","TerminalId:3ELI0001","Content-Type: application\/json"]
+
+=========LOGIN HEADERS 2022-09-04 08:14:01 =========
+
+{"Host":"localhost","Connection":"keep-alive","sec-ch-ua":"\"Chromium\";v=\"104\", \" Not A;Brand\";v=\"99\", \"Google Chrome\";v=\"104\"","sec-ch-ua-mobile":"?0","sec-ch-ua-platform":"\"Windows\"","Upgrade-Insecure-Requests":"1","User-Agent":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/104.0.0.0 Safari\/537.36","Accept":"text\/html,application\/xhtml+xml,application\/xml;q=0.9,image\/avif,image\/webp,image\/apng,*\/*;q=0.8,application\/signed-exchange;v=b3;q=0.9","Sec-Fetch-Site":"none","Sec-Fetch-Mode":"navigate","Sec-Fetch-User":"?1","Sec-Fetch-Dest":"document","Accept-Encoding":"gzip, deflate, br","Accept-Language":"en-US,en;q=0.9","Cookie":"twk_uuid_5a7c31ded7591465c7077c48=%7B%22uuid%22%3A%221.AGEB3jZaobU4qdoJaF38NXoSQfYKYCFNuRw0bm12IXXkRdROPHYUfMxZH1LqDS3IawO3TawldpdS0S60ObG5F7ET8tQXUqskO4Z8FTdtUdPD71uguOo1COZyCYswhF7m%22%2C%22version%22%3A3%2C%22domain%22%3Anull%2C%22ts%22%3A1650658145330%7D; _ga=GA1.1.1498960489.1654869209; _ga_E3C3GCQVBN=GS1.1.1654869208.1.0.1654869233.0; _gid=GA1.1.2095403348.1662286110; zeal_session=dgr7l08rikfavil5dh3a833vshctbg9r; ci_session=6g55fipihvpd3a9quuetqcmt5ceovrmc"}
+
+=========LOGIN REQUEST 2022-09-04 08:14:01 =========
+
+
+=========LOGIN RESPONSE 2022-09-04 08:14:01 =========
+
+
+=========LOGIN HEADERS 2022-09-04 08:21:21 =========
+
+{"Content-Type":"application\/json","User-Agent":"PostmanRuntime\/7.29.0","Accept":"*\/*","Postman-Token":"ecf7c911-12bb-4185-96db-489937ea2cba","Host":"localhost","Accept-Encoding":"gzip, deflate, br","Connection":"keep-alive","Content-Length":"59"}
+
+=========LOGIN REQUEST 2022-09-04 08:21:21 =========
+
+{"username":"henry","password":"Zeros@2020$"}
+
+=========LOGIN RESPONSE 2022-09-04 08:21:21 =========
+
+
+=========LOGIN HEADERS 2022-09-04 08:21:33 =========
+
+{"Content-Type":"application\/json","User-Agent":"PostmanRuntime\/7.29.0","Accept":"*\/*","Postman-Token":"a0a033c2-bf62-4d80-a2fe-511be2b2fff2","Host":"localhost","Accept-Encoding":"gzip, deflate, br","Connection":"keep-alive","Content-Length":"59","Cookie":"ci_session=kj9agacpbeo0g1ebluikfteesuuk360u"}
+
+=========LOGIN REQUEST 2022-09-04 08:21:33 =========
+
+{"username":"henry","password":"Zeros@2020$"}
+
+=========LOGIN RESPONSE 2022-09-04 08:21:33 =========
+
+
+=========LOGIN HEADERS 2022-09-04 08:21:39 =========
+
+{"Content-Type":"application\/json","User-Agent":"PostmanRuntime\/7.29.0","Accept":"*\/*","Postman-Token":"0c3629e7-1e17-43d4-86d7-06081d443e33","Host":"localhost","Accept-Encoding":"gzip, deflate, br","Connection":"keep-alive","Content-Length":"59","Cookie":"ci_session=kj9agacpbeo0g1ebluikfteesuuk360u"}
+
+=========LOGIN REQUEST 2022-09-04 08:21:39 =========
+
+{"username":"henry","password":"Zeros@2020$"}
+
+=========LOGIN RESPONSE 2022-09-04 08:21:39 =========
+
+
+=========LOGIN HEADERS 2022-09-04 08:25:50 =========
+
+{"Content-Type":"application\/json","User-Agent":"PostmanRuntime\/7.29.0","Accept":"*\/*","Postman-Token":"6443584a-34e2-4433-a17c-327c307c3a28","Host":"localhost","Accept-Encoding":"gzip, deflate, br","Connection":"keep-alive","Content-Length":"59","Cookie":"ci_session=kj9agacpbeo0g1ebluikfteesuuk360u"}
+
+=========LOGIN REQUEST 2022-09-04 08:25:50 =========
+
+{"username":"henry","password":"Zeros@2020$"}
+
+=========LOGIN RESPONSE 2022-09-04 08:25:50 =========
+
+
+=========LOGIN HEADERS 2022-09-04 08:26:16 =========
+
+{"Content-Type":"application\/json","User-Agent":"PostmanRuntime\/7.29.0","Accept":"*\/*","Postman-Token":"5b2ce402-67ee-46d1-9107-61b16cb9e685","Host":"localhost","Accept-Encoding":"gzip, deflate, br","Connection":"keep-alive","Content-Length":"59","Cookie":"ci_session=kj9agacpbeo0g1ebluikfteesuuk360u"}
+
+=========LOGIN REQUEST 2022-09-04 08:26:16 =========
+
+{"username":"henry","password":"Zeros@2020$"}
+
+=========LOGIN RESPONSE 2022-09-04 08:26:16 =========
+
+
+=========LOGIN HEADERS 2022-09-04 08:26:40 =========
+
+{"Content-Type":"application\/json","User-Agent":"PostmanRuntime\/7.29.0","Accept":"*\/*","Postman-Token":"e8286ff5-178c-4b2c-b660-4ff66442abdc","Host":"localhost","Accept-Encoding":"gzip, deflate, br","Connection":"keep-alive","Content-Length":"59","Cookie":"ci_session=kj9agacpbeo0g1ebluikfteesuuk360u"}
+
+=========LOGIN REQUEST 2022-09-04 08:26:40 =========
+
+{"username":"henry","password":"Zeros@2020$"}
+
+=========LOGIN RESPONSE 2022-09-04 08:26:40 =========
+
+
+=========LOGIN HEADERS 2022-09-04 08:26:51 =========
+
+{"Content-Type":"application\/json","User-Agent":"PostmanRuntime\/7.29.0","Accept":"*\/*","Postman-Token":"cba70f40-1eeb-456e-9bf7-b2b4636d1160","Host":"localhost","Accept-Encoding":"gzip, deflate, br","Connection":"keep-alive","Content-Length":"59","Cookie":"ci_session=kj9agacpbeo0g1ebluikfteesuuk360u"}
+
+=========LOGIN REQUEST 2022-09-04 08:26:51 =========
+
+{"username":"henry","password":"Zeros@2020$"}
+
+=========LOGIN RESPONSE 2022-09-04 08:26:51 =========
+
+
+=========LOGIN HEADERS 2022-09-04 08:28:00 =========
+
+{"Content-Type":"application\/json","User-Agent":"PostmanRuntime\/7.29.0","Accept":"*\/*","Postman-Token":"22bc599c-5912-46d9-8c39-9db0269fe0e0","Host":"localhost","Accept-Encoding":"gzip, deflate, br","Connection":"keep-alive","Content-Length":"59","Cookie":"ci_session=kj9agacpbeo0g1ebluikfteesuuk360u"}
+
+=========LOGIN REQUEST 2022-09-04 08:28:00 =========
+
+{"username":"henry","password":"Zeros@2020$"}
+
+=========LOGIN RESPONSE 2022-09-04 08:28:00 =========
+
+{"user_id":"1","username":"henry","fullNames":null,"userType":"1","status":"1","lastModified":"2019-11-17 13:58:40","pwd_changed":"1","tranPin":"1234","id":"4","agentNo":"ZAD10002","names":"Henry Nkuke","phoneNumber":"0705596472","email":"henricsanyu@gmail.com","cardNo":null,"nin":"","location":"Kyebando","wallet_type":"1","photo":"070559647215766940951424831881.png","gender":"M","date_joined":"2019-11-26 01:23:02","last_modified":"2019-11-26 01:23:02","createdBy":"SignUp","lastActivity":"2019-11-26 01:23:02","countryId":null,"userId":"1","kyc_attached":null,"refferalAgent":""}

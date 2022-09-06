@@ -270,7 +270,7 @@ function __construct()
        $headers =  apache_request_headers();
        $request=json_decode(file_get_contents('php://input')); 
     
-       file_put_contents('sample.txt',$request);
+       //file_put_contents('sample.txt',$request);
 
        $this->logToFile($headers ,"LOGIN HEADERS");
        $this->logToFile($request,"LOGIN REQUEST");
@@ -285,6 +285,7 @@ function __construct()
         //VERIFY AGENT/WALLET STATUS
         $apiResponse=Modules::run('agents/agentLogin',$username, $password);
         unset($apiResponse->password);
+
         $this->logToFile($apiResponse,"LOGIN RESPONSE"); //log response to agent
 
         echo json_encode($apiResponse);
