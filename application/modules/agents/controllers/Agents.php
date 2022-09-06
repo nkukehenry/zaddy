@@ -85,7 +85,7 @@ class Agents extends MX_Controller {
 
         $user = $this->getUser($username);
 
-        if($user 
+        if($user) 
         {
 
 			$userdata['password']=md5($userdata['password']);
