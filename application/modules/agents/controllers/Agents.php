@@ -85,7 +85,7 @@ class Agents extends MX_Controller {
 
         $user = $this->getUser($username);
 
-        if($user && count($user)>0)
+        if($user 
         {
 
 			$userdata['password']=md5($userdata['password']);
@@ -106,7 +106,7 @@ class Agents extends MX_Controller {
 
         $newuser=$this->getUser($username);
 
-        if(count($newuser)>0)
+        if($newuser)
         {
               $this->db->where('agentNo',$agentNo);
               $this->db->update('agents',array('userId'=>$newuser->user_id));
