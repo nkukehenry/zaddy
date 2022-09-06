@@ -12,9 +12,10 @@ error_reporting(0);
         define("YAAKA_SHARE",0.8);
         define("REFERRAL_COMS",0.05);
 
-               define('EZEE_09',array('1026','1015'));
-               define("WEBSERVICE_URL","http://ug.ezeemoney.biz:8082/EMTerminalAPI/v1/API.svc?wsdl");
-               define("EZEE_USERNAME","4295432316");
+        define('EZEE_09',array('1026','1015'));
+        //define("WEBSERVICE_URL","http://ug.ezeemoney.biz:8082/EMTerminalAPI/v1/API.svc?wsdl");
+        define("WEBSERVICE_URL","http://ugapi.ezeemoney.biz/v1/API.svc?wsdl");
+        define("EZEE_USERNAME","4295432316");
 		define("EZEE_PASSWORD","6444CF2846");
 		define("EZEE_CODE","40023841 ");
 		define("AGENT_PREFIX","JAB");
