@@ -1195,3 +1195,11 @@
 =========SYSTEM INCOMING PAYMENT RESPONSE 2022-09-08 09:56:09 =========
 
 {"transferCode":"LD1662663369","requestReference":"LD1662663369","transactionRef":null,"rechargePIN":"Load successful","responseCode":"9000","responseMessage":"SUCCESSFUL"}
+
+=========SYSTEM OUTGOING PAYMENT 2022-09-08 09:59:32 =========
+
+{"itemCode":null,"paymentCode":"LOAD","customerId":"ZAD10002","amount":"3000","surcharge":0,"phoneNumber":null,"narration":"test","agentId":"ZAD10002","requestRef":"LD1662663572","transactionRef":"ZAD10002|3000|LOAD","customerName":"Henry Nkuke","referralCode":null,"customerPhone":"","impact":"3000"}
+
+=========SYSTEM INCOMING PAYMENT RESPONSE 2022-09-08 09:59:32 =========
+
+{"transferCode":"LD1662663572","requestReference":"LD1662663572","transactionRef":null,"rechargePIN":"Load successful","responseCode":"9000","responseMessage":"SUCCESSFUL"}
