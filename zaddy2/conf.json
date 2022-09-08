@@ -1,0 +1,24 @@
+
+{
+       "AFRICELL_API_URL":"http://104.37.191.18/connect/index.php/africellAt",
+       "AFRICELL_DATA_URL":"http://104.37.191.18/connect/index.php/africellPay",
+       "AFRICELL_USER":"EllyPayLive",
+       "AFRICELL_PASS":"E11yPayLive@2020",
+       "AFRICELL_VENDORNO":"797275120",
+       "MTN_AT_URL":"http://104.37.191.18/connect/index.php/mtnAirtime",
+       "MTN_AUTH_KEY":"ING9Nfsd50",
+       "MTN_VENDORNO":"256782379882",
+       "MTN_DATA_NO":"256782379882",
+       "MTN_KEY":"RQo0IBV10KA7RIiN6fzkuKLGjaoKlA4g",
+       "MY_TERMINAL":"3ELI0001",
+	"DEVICE_TERMINAL":"3ELI0001",
+	"APPSERVICE_URL":"https://interswitch.io/api/v1/appservice/",
+	"SVA_BASE_URL":"https://interswitch.io/api/v1A/svapayments/",
+	"QT_BASE_URL":"https://interswitch.io/api/v1/quickteller/",
+	"CLIENT_ID":"IKIA0E9B4269B365D516B7405F4D8AB9F0EFA6D3B7D6", 
+	"CLIENT_SECRET":"cO4Q8lhSOZbQ37qHKZQMduP1TmHi9KQrzimCjRJYqtUMQo7QlEf26q3TXa6Lbeup",
+       "DB_USER":"root",
+       "DB_PASS":"",
+       "DB_NAME":"elly"
+
+}
