@@ -118,7 +118,7 @@ function __construct()
       $agentfee = $fees['agentfee']; //in config
       $refferralCommission  = 0;
     
-    	if(!empty($payment->getReferralCode()) &&  $payment->getReferralCode()!==null && $payment->getReferralCode()!=='null'){
+    	if(!($payment->getReferralCode()) &&  $payment->getReferralCode()!==null && $payment->getReferralCode()!=='null'){
            
            $refferralCommission = REFERRAL_COMS * $agentfee;
            $agentfee  = $agentfee - $refferralCommission;
