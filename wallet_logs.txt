@@ -1183,3 +1183,15 @@
 =========LOGIN RESPONSE 2022-09-04 08:28:00 =========
 
 {"user_id":"1","username":"henry","fullNames":null,"userType":"1","status":"1","lastModified":"2019-11-17 13:58:40","pwd_changed":"1","tranPin":"1234","id":"4","agentNo":"ZAD10002","names":"Henry Nkuke","phoneNumber":"0705596472","email":"henricsanyu@gmail.com","cardNo":null,"nin":"","location":"Kyebando","wallet_type":"1","photo":"070559647215766940951424831881.png","gender":"M","date_joined":"2019-11-26 01:23:02","last_modified":"2019-11-26 01:23:02","createdBy":"SignUp","lastActivity":"2019-11-26 01:23:02","countryId":null,"userId":"1","kyc_attached":null,"refferalAgent":""}
+
+=========SYSTEM OUTGOING PAYMENT 2022-09-08 09:51:41 =========
+
+{"itemCode":null,"paymentCode":"LOAD","customerId":"ZAD10002","amount":"1000","surcharge":0,"phoneNumber":null,"narration":"test","agentId":"ZAD10002","requestRef":"LD1662663101","transactionRef":"ZAD10002|1000|LOAD","customerName":"Henry Nkuke","customerPhone":"","impact":"1000"}
+
+=========SYSTEM OUTGOING PAYMENT 2022-09-08 09:56:09 =========
+
+{"itemCode":null,"paymentCode":"LOAD","customerId":"ZAD10002","amount":"1000","surcharge":0,"phoneNumber":null,"narration":"test","agentId":"ZAD10002","requestRef":"LD1662663369","transactionRef":"ZAD10002|1000|LOAD","customerName":"Henry Nkuke","referralCode":null,"customerPhone":"","impact":"1000"}
+
+=========SYSTEM INCOMING PAYMENT RESPONSE 2022-09-08 09:56:09 =========
+
+{"transferCode":"LD1662663369","requestReference":"LD1662663369","transactionRef":null,"rechargePIN":"Load successful","responseCode":"9000","responseMessage":"SUCCESSFUL"}

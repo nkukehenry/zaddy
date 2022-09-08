@@ -14,6 +14,7 @@ class PaymentRequest {
 	private $requestRef;
 	private $transactionRef;
 	private $customerName;
+	private $referralCode;
 
     public function setFromJSON($jsonArray){
 
@@ -30,6 +31,10 @@ class PaymentRequest {
 
 	  public function getPaymentCode(){
 	  	 return $this->paymentCode;
+	  }
+
+	  public function getReferralCode(){
+	  	return $this->referralCode;
 	  }
 
 	public function getCustomerId(){
