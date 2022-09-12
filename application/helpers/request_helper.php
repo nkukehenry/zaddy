@@ -1,7 +1,7 @@
 <?php
 
-if(!function_exists('get_headers')){
-	function get_headers(){
+if(!function_exists('request_headers')){
+	function request_headers(){
 
         $headers = apache_request_headers();
 

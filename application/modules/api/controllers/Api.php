@@ -23,7 +23,7 @@ function __construct()
     public function validateCustomer(){
 
        // $headers =  $_SERVER;
-        $headers = get_headers(); 
+        $headers = request_headers(); 
         $request=json_decode(file_get_contents('php://input')); //$this->input->post();
 
         $this->logToFile($headers ,AGENT_IN_VAL." HEADERS");
@@ -74,7 +74,7 @@ function __construct()
     public function validateAgent($agentNo){
 
         //$headers =  $_SERVER;
-		$headers = get_headers(); 
+		$headers = request_headers(); 
         $this->logToFile($headers ,AGENT_IN_VAL." HEADERS");
 
         if(!$this->isAuthorized($headers)){ //chec app_key
@@ -103,7 +103,7 @@ function __construct()
      public function payment(){
 
         
-     	$headers = get_headers(); 
+     	$headers = request_headers(); 
         $request=json_decode(file_get_contents('php://input')); //$this->input->post();
 
         $this->logToFile($headers ,AGENT_IN_PAY." HEADERS");
@@ -176,7 +176,7 @@ function __construct()
      public function categoryBillers($categoryId){
 
         
-		$headers = get_headers(); 
+		$headers = request_headers(); 
         if(!$this->isAuthorized($headers)){ //chec app_key
 
             $this->logToFile($headers,"HEADERS IN");
@@ -209,7 +209,7 @@ function __construct()
     public function transactionCheck($requestRef){
 
         
-		$headers = get_headers(); 
+		$headers = request_headers(); 
         if(!$this->isAuthorized($headers)){ //chec app_key
 
             $this->logToFile($headers,"HEADERS IN");
@@ -238,7 +238,7 @@ function __construct()
     public function billerItems($billerId){
 
         //$headers =  $_SERVER;
-		$headers = get_headers(); 
+		$headers = request_headers(); 
         if(!$this->isAuthorized($headers)){ //chec app_key
             echo $this->getAuthError();
             return;
@@ -267,7 +267,7 @@ function __construct()
         header("Access-Control-Allow-Headers: *");
         header('Access-Control-Max-Age: 86400'); 
    		file_put_contents('logs.txt','Login');
-       $headers =  get_headers();
+       $headers =  request_headers();
        $request=json_decode(file_get_contents('php://input')); 
     
        //file_put_contents('sample.txt',$request);
@@ -294,7 +294,7 @@ function __construct()
      public function agentHistory(){
 
         
-		$headers = get_headers(); 
+		$headers = request_headers(); 
         if(!$this->isAuthorized($headers)){ //chec app_key
 
             $this->logToFile($headers,"HEADERS IN");
@@ -322,7 +322,7 @@ function __construct()
    public function agentStatement(){
 
         
-		$headers = get_headers(); 
+		$headers = request_headers(); 
         if(!$this->isAuthorized($headers)){ //chec app_key
 
             $this->logToFile($headers,"HEADERS IN");
@@ -350,7 +350,7 @@ function __construct()
 
    public function profileUpdate(){
 
-      $headers =  get_headers();
+      $headers =  request_headers();
       $request=json_decode(file_get_contents('php://input')); //
 
        $this->logToFile($headers ,"PROFILE HEADERS");
@@ -365,7 +365,7 @@ function __construct()
     public function setPin(){
 
       //$headers =  $_SERVER;
-      $headers = get_headers(); 
+      $headers = request_headers(); 
       $request=json_decode(file_get_contents('php://input')); //
 
        $this->logToFile($headers ,"SET PIN HEADERS");
@@ -405,7 +405,7 @@ function __construct()
     public function getAgentBalance(){
 
          
-         $headers = get_headers(); 
+         $headers = request_headers(); 
           $this->logToFile($headers,"HEADERS IN");
 
         if(!$this->isAuthorized($headers)){ //chec app_key
@@ -426,7 +426,7 @@ function __construct()
 
       public function getCommission(){
 
-         $headers = get_headers(); 
+         $headers = request_headers(); 
         $this->logToFile($headers,"HEADERS IN");
 
         if(!$this->isAuthorized($headers)){ //chec app_key
@@ -448,7 +448,7 @@ function __construct()
    public function getReferralCommission(){
 
          
-   		 $headers = get_headers(); 
+   		 $headers = request_headers(); 
           $this->logToFile($headers,"HEADERS IN");
 
         if(!$this->isAuthorized($headers)){ //chec app_key
@@ -467,7 +467,7 @@ function __construct()
 
  public function getReferrals(){
     
-    $headers = get_headers(); 
+    $headers = request_headers(); 
 	$agentNo = $headers[AGENT_ID];
 	$referrals = Modules::run('agents/getRefferals',$agentNo);
     echo json_encode($referrals);
