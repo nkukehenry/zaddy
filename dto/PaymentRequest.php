@@ -41,6 +41,10 @@ class PaymentRequest {
 	  	 return $this->customerId;
 	  }
 
+	  public function setAmount($amount){
+	  	 return $this->amount = $amount;
+	  }
+
 	public function getAmount(){
 	  	 return $this->amount;
 	  }
