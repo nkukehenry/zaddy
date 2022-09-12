@@ -111,7 +111,7 @@ function __construct()
 
 
         if(!$this->isAuthorized($headers)){ //chec app_key
-
+            $this->logToFile("Auth error","CHECK");
             $this->logToFile($this->getAuthError(),AGENT_OUT_PAY);
             echo $this->getAuthError();
             return;
@@ -121,6 +121,7 @@ function __construct()
         $verificationResult=$this->isAgentActive($headers);
 
         if(!is_bool($verificationResult)){
+            $this->logToFile("Verification error","CHECK");
             $this->logToFile($verificationResult,AGENT_OUT_PAY);
             echo $verificationResult;
             return;
