@@ -26,12 +26,12 @@ function __construct()
         $headers = request_headers(); 
         $request=json_decode(file_get_contents('php://input')); //$this->input->post();
 
-        $this->logToFile($headers ,AGENT_IN_VAL." HEADERS");
-        $this->logToFile($request,AGENT_IN_VAL);
+        logToFile($headers ,AGENT_IN_VAL." HEADERS");
+        logToFile($request,AGENT_IN_VAL);
 
         if(!$this->isAuthorized($headers)){ //chec app_key supplied
 
-            $this->logToFile($this->getAuthError(),AGENT_OUT_VAL);
+            logToFile($this->getAuthError(),AGENT_OUT_VAL);
             echo $this->getAuthError();
             return;
         }
@@ -40,7 +40,7 @@ function __construct()
         $verificationResult=$this->isAgentActive($headers);
 
         if(!is_bool($verificationResult)){
-            $this->logToFile($verificationResult,AGENT_OUT_VAL);
+            logToFile($verificationResult,AGENT_OUT_VAL);
             echo $verificationResult;
             return;
         }
@@ -48,7 +48,7 @@ function __construct()
         $canTransact=$this->canAgentTransact($headers);
     	//CHECK BANNED AGENT--can login but can't transact
     	 if(!is_bool($canTransact)){
-            $this->logToFile($canTransact,AGENT_OUT_VAL);
+            logToFile($canTransact,AGENT_OUT_VAL);
             echo $canTransact;
             return;
         }
@@ -66,7 +66,7 @@ function __construct()
             $apiResponse['customerName']=strtoUpper($apiResponse['customerName']);
         }
 
-        $this->logToFile($apiResponse,AGENT_OUT_VAL); //log response to agent
+        logToFile($apiResponse,AGENT_OUT_VAL); //log response to agent
         echo json_encode($apiResponse);
     
     }
@@ -75,11 +75,11 @@ function __construct()
 
         //$headers =  $_SERVER;
 		$headers = request_headers(); 
-        $this->logToFile($headers ,AGENT_IN_VAL." HEADERS");
+        logToFile($headers ,AGENT_IN_VAL." HEADERS");
 
         if(!$this->isAuthorized($headers)){ //chec app_key
 
-            $this->logToFile($this->getAuthError(),AGENT_OUT_VAL);
+            logToFile($this->getAuthError(),AGENT_OUT_VAL);
             echo $this->getAuthError();
             return;
         }
@@ -87,7 +87,7 @@ function __construct()
         $verificationResult=$this->isAgentActive($headers);
 
         if(!is_bool($verificationResult)){
-            $this->logToFile($verificationResult,AGENT_OUT_VAL);
+            logToFile($verificationResult,AGENT_OUT_VAL);
             echo $verificationResult;
             return;
         }
@@ -95,7 +95,7 @@ function __construct()
         $apiResponse=Modules::run('agents/getAgent',$agentNo);
         $apiResponse->shortTransactionRef="LD".time();
 
-        $this->logToFile($apiResponse,AGENT_OUT_VAL); //log response to agent
+        logToFile($apiResponse,AGENT_OUT_VAL); //log response to agent
         header("Access-Control-Allow-Origin: *");
         echo json_encode($apiResponse);
     }
@@ -106,13 +106,13 @@ function __construct()
      	$headers = request_headers(); 
         $request=json_decode(file_get_contents('php://input')); //$this->input->post();
 
-        $this->logToFile($headers ,AGENT_IN_PAY." HEADERS");
-        $this->logToFile($request,AGENT_IN_PAY);
+        logToFile($headers ,AGENT_IN_PAY." HEADERS");
+        logToFile($request,AGENT_IN_PAY);
 
 
         if(!$this->isAuthorized($headers)){ //chec app_key
-            $this->logToFile("Auth error","CHECK");
-            $this->logToFile($this->getAuthError(),AGENT_OUT_PAY);
+            logToFile("Auth error","CHECK");
+            logToFile($this->getAuthError(),AGENT_OUT_PAY);
             echo $this->getAuthError();
             return;
         }
@@ -121,8 +121,8 @@ function __construct()
         $verificationResult=$this->isAgentActive($headers);
 
         if(!is_bool($verificationResult)){
-            $this->logToFile("Verification error","CHECK");
-            $this->logToFile($verificationResult,AGENT_OUT_PAY);
+            logToFile("Verification error","CHECK");
+            logToFile($verificationResult,AGENT_OUT_PAY);
             echo $verificationResult;
             return;
         }
@@ -168,7 +168,7 @@ function __construct()
          	$apiResponse=array("responseCode"=>"90096","responseMessage"=>"Provider general failure");
          }
      
-        $this->logToFile($apiResponse,AGENT_OUT_PAY); //log response to agent
+        logToFile($apiResponse,AGENT_OUT_PAY); //log response to agent
 
         echo json_encode($apiResponse);
     }
@@ -180,7 +180,7 @@ function __construct()
 		$headers = request_headers(); 
         if(!$this->isAuthorized($headers)){ //chec app_key
 
-            $this->logToFile($headers,"HEADERS IN");
+            logToFile($headers,"HEADERS IN");
             echo $this->getAuthError();
            return;
         }
@@ -189,7 +189,7 @@ function __construct()
         $verificationResult=$this->isAgentActive($headers);
 
         if(!is_bool($verificationResult)){
-            $this->logToFile($verificationResult,AGENT_OUT_VAL);
+            logToFile($verificationResult,AGENT_OUT_VAL);
             echo $verificationResult;
             return;
         }
@@ -213,7 +213,7 @@ function __construct()
 		$headers = request_headers(); 
         if(!$this->isAuthorized($headers)){ //chec app_key
 
-            $this->logToFile($headers,"HEADERS IN");
+            logToFile($headers,"HEADERS IN");
             echo $this->getAuthError();
            return;
         }
@@ -222,7 +222,7 @@ function __construct()
         $verificationResult=$this->isAgentActive($headers);
 
         if(!is_bool($verificationResult)){
-            $this->logToFile($verificationResult,AGENT_OUT_VAL);
+            logToFile($verificationResult,AGENT_OUT_VAL);
             echo $verificationResult;
             return;
         }
@@ -249,7 +249,7 @@ function __construct()
         $verificationResult=$this->isAgentActive($headers);
 
         if(!is_bool($verificationResult)){
-            $this->logToFile($verificationResult,AGENT_OUT_VAL);
+            logToFile($verificationResult,AGENT_OUT_VAL);
             echo $verificationResult;
             return;
         }
@@ -273,11 +273,11 @@ function __construct()
     
        //file_put_contents('sample.txt',$request);
 
-       $this->logToFile($headers ,"LOGIN HEADERS");
-       $this->logToFile($request,"LOGIN REQUEST");
+       logToFile($headers ,"LOGIN HEADERS");
+       logToFile($request,"LOGIN REQUEST");
 
         /*if(!$this->isAuthorized($headers)){ //chec app_key
-            $this->logToFile($this->getAuthError(),"AUTH ON LOGIN");
+            logToFile($this->getAuthError(),"AUTH ON LOGIN");
             echo $this->getAuthError();
             return;
         }*/
@@ -287,7 +287,7 @@ function __construct()
         $apiResponse=Modules::run('agents/agentLogin',$username, $password);
         unset($apiResponse->password);
 
-        $this->logToFile($apiResponse,"LOGIN RESPONSE"); //log response to agent
+        logToFile($apiResponse,"LOGIN RESPONSE"); //log response to agent
 
         echo json_encode($apiResponse);
     }
@@ -298,7 +298,7 @@ function __construct()
 		$headers = request_headers(); 
         if(!$this->isAuthorized($headers)){ //chec app_key
 
-            $this->logToFile($headers,"HEADERS IN");
+            logToFile($headers,"HEADERS IN");
             echo $this->getAuthError();
             return;
         }
@@ -307,7 +307,7 @@ function __construct()
         $verificationResult=$this->isAgentActive($headers);
 
         if(!is_bool($verificationResult)){
-            $this->logToFile($verificationResult,AGENT_OUT_VAL);
+            logToFile($verificationResult,AGENT_OUT_VAL);
             echo $verificationResult;
             return;
         }
@@ -326,7 +326,7 @@ function __construct()
 		$headers = request_headers(); 
         if(!$this->isAuthorized($headers)){ //chec app_key
 
-            $this->logToFile($headers,"HEADERS IN");
+            logToFile($headers,"HEADERS IN");
             echo $this->getAuthError();
             return;
         }
@@ -335,7 +335,7 @@ function __construct()
         $verificationResult=$this->isAgentActive($headers);
 
         if(!is_bool($verificationResult)){
-            $this->logToFile($verificationResult,AGENT_OUT_VAL);
+            logToFile($verificationResult,AGENT_OUT_VAL);
             echo $verificationResult;
             return;
         }
@@ -354,11 +354,11 @@ function __construct()
       $headers =  request_headers();
       $request=json_decode(file_get_contents('php://input')); //
 
-       $this->logToFile($headers ,"PROFILE HEADERS");
-       $this->logToFile($request,"PROFILE REQUEST");
+       logToFile($headers ,"PROFILE HEADERS");
+       logToFile($request,"PROFILE REQUEST");
 
         $apiResponse=Modules::run('agents/profileUpdate',$request);
-        $this->logToFile($apiResponse,"PROFILE RESPONSE"); //log response to agent
+        logToFile($apiResponse,"PROFILE RESPONSE"); //log response to agent
 
         echo json_encode($apiResponse);
     }
@@ -369,8 +369,8 @@ function __construct()
       $headers = request_headers(); 
       $request=json_decode(file_get_contents('php://input')); //
 
-       $this->logToFile($headers ,"SET PIN HEADERS");
-       $this->logToFile($request,"SET PIN REQUEST");
+       logToFile($headers ,"SET PIN HEADERS");
+       logToFile($request,"SET PIN REQUEST");
 
         if(!$this->isAuthorized($headers)){ //chec app_key
             echo $this->getAuthError();
@@ -378,7 +378,7 @@ function __construct()
         }
 
         $apiResponse=Modules::run('agents/setTranPin',$request);
-        $this->logToFile($apiResponse,"SET PIN RESPONSE"); //log response to agent
+        logToFile($apiResponse,"SET PIN RESPONSE"); //log response to agent
 
         echo json_encode($apiResponse);
     }
@@ -388,8 +388,8 @@ function __construct()
        $headers =  $_SERVER;
       $request=json_decode(file_get_contents('php://input')); //
 
-       $this->logToFile($headers ,"SET PASSWORD HEADERS");
-       $this->logToFile($request,"SET PASSWORD REQUEST");
+       logToFile($headers ,"SET PASSWORD HEADERS");
+       logToFile($request,"SET PASSWORD REQUEST");
 
         if(!$this->isAuthorized($headers)){ //chec app_key
             echo $this->getAuthError();
@@ -397,7 +397,7 @@ function __construct()
         }
 
         $apiResponse=Modules::run('agents/setPassword',$request);
-        $this->logToFile($apiResponse,"SET PASSWORD RESPONSE"); //log response to agent
+        logToFile($apiResponse,"SET PASSWORD RESPONSE"); //log response to agent
 
         echo json_encode($apiResponse);
     }
@@ -407,7 +407,7 @@ function __construct()
 
          
          $headers = request_headers(); 
-          $this->logToFile($headers,"HEADERS IN");
+          logToFile($headers,"HEADERS IN");
 
         if(!$this->isAuthorized($headers)){ //chec app_key
 
@@ -428,7 +428,7 @@ function __construct()
       public function getCommission(){
 
          $headers = request_headers(); 
-        $this->logToFile($headers,"HEADERS IN");
+        logToFile($headers,"HEADERS IN");
 
         if(!$this->isAuthorized($headers)){ //chec app_key
 
@@ -450,7 +450,7 @@ function __construct()
 
          
    		 $headers = request_headers(); 
-          $this->logToFile($headers,"HEADERS IN");
+          logToFile($headers,"HEADERS IN");
 
         if(!$this->isAuthorized($headers)){ //chec app_key
 
@@ -591,23 +591,11 @@ function __construct()
 	function cron(){
     
     	$data="CRON IS WORKING";
-    	$this->logToFile($data,"CRON TEST");
+    	logToFile($data,"CRON TEST");
     	Modules::run('payment/sortPending');
     }
 
-    function logToFile($reqdata,$type){
-
-        $currentdate=date("Y-m-d h:i:s");
-        if(is_array($reqdata))
-            $reqdata="\n".json_encode($reqdata);
-        if(is_object($reqdata))
-            $reqdata="\n".json_encode($reqdata);
-
-        $start="\n\n=========".$type." ".$currentdate." =========\n";
-        $data=$start.$reqdata;
-        file_put_contents(LOG_FILE, $data,FILE_APPEND);
-
-    }
+    
 
 
 

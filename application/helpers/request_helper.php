@@ -17,3 +17,20 @@ if(!function_exists('request_headers')){
         return $headers;
 	}
 }
+
+if(!function_exists('logToFile')){
+
+function logToFile($reqdata,$type){
+
+        $currentdate=date("Y-m-d h:i:s");
+        if(is_array($reqdata))
+            $reqdata="\n".json_encode($reqdata);
+        if(is_object($reqdata))
+            $reqdata="\n".json_encode($reqdata);
+
+        $start="\n\n=========".$type." ".$currentdate." =========\n";
+        $data=$start.$reqdata;
+        file_put_contents(LOG_FILE, $data,FILE_APPEND);
+
+    }
+}

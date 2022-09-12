@@ -36,7 +36,7 @@ public function postPayment($request)
   {
 
     $paymentCode = $request->getPaymentCode();
-	$agentNo = $request->getAgentId();
+	  $agentNo = $request->getAgentId();
 	
     //clear cached history for agent
     Modules::run('cache/trashdata','HISTORY_'.$agentNo);
@@ -49,6 +49,8 @@ public function postPayment($request)
         $route = $this->pay_mdl->getRoute($paymentCode);
         Modules::run('cache/setStr','ROUTE_'.$paymentCode,$route);
     }
+
+    logToFile($route,"ROUTE PICKED");
 
 	if($this->pay_mdl->checkDoublePost($request)==true){
        return $this->duplicateDetected($request);
@@ -112,7 +114,7 @@ public function ellypay($request){
 
 public function ezeeMoney($request){
 
-	 $paymentCode = $request->getPaymentCode();
+	    $paymentCode = $request->getPaymentCode();
       $charges     = $this->pay_mdl->getCharges($paymentCode,$request->getAmount());
       $ourCharge   = $charges->ourCharge;
       $isInclusive = $charges->isInclusive;

@@ -87,7 +87,7 @@ function __construct()
 	//save payment to db, make it pending
     public function save($payment){
 
-    	$this->logToFile($payment,SYSTEM_OUT_PAY);
+    	logToFile($payment,"DB ACTION");
 
 
     	$impact=$payment->getAmount()*-1;
@@ -168,7 +168,7 @@ function __construct()
 
     public function saveDebit($payment){
 
-    	$this->logToFile($payment,SYSTEM_OUT_PAY);
+    	logToFile($payment,SYSTEM_OUT_PAY);
 
     	$impact=$payment->getAmount()*-1;
 
@@ -207,7 +207,7 @@ function __construct()
 
     public function update($ref,$paymentResponse,$paymentCode=0){
 
-      $this->logToFile($paymentResponse->expose(),SYSTEM_IN_PAY);
+      logToFile($paymentResponse->expose(),SYSTEM_IN_PAY);
       $code=$paymentResponse->getResponseCode();
 
     	 $status="PENDING";
@@ -405,24 +405,6 @@ function __construct()
         	$this->db->update($this->table,array("commissionState"=>1));
 
         	return true;
-    }
-
-     function logToFile($reqdata,$type){
-
-    	$currentdate=date("Y-m-d h:i:s");
-
-    	if(is_array($reqdata))
-    		$reqdata="\n".json_encode($reqdata);
-
-        if(is_object($reqdata)){
-
-            $reqdata="\n".json_encode($reqdata->expose());
-        }
-
-    	$start="\n\n=========".$type." ".$currentdate." =========\n";
-    	$data=$start.$reqdata;
-    	file_put_contents(LOG_FILE, $data,FILE_APPEND);
-
     }
 
     public function incrementRetry($ref){
