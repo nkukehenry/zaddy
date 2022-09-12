@@ -439,10 +439,10 @@ function __construct()
       $this->db->where('billerId',$billerId);
       $biller=$this->db->get('routing')->row();
 
-      if(empty($biller)){
-
-          return "interswitchPayment";
+      if(!isset($biller->route)){
+          return "ezeeMoney";
       }
+
       return $biller->route;
 
   }
