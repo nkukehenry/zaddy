@@ -21,8 +21,8 @@ error_reporting(0);
 		define("AGENT_PREFIX","JAB");
 
 		//wallet configs
-		define("APP_KEY","HTTP_APP_KEY");
-		define("AGENT_ID","HTTP_AGENT_ID");
+		define("APP_KEY","APP_KEY");
+		define("AGENT_ID","AGENT_ID");
 		define("WALLET_KEY","123456789");
 
 		define("SUCCESS_RESPONSE_MSG","Payment completed successfully");
