@@ -103,9 +103,11 @@ public function ellypay($request){
    $request->setAmount($amt);
    $requestReference = $request->getRequestRef();
 
-   file_put_contents(LOG_FILE, "\n ELLYPAY OUT -CHARGES".$request,FILE_APPEND);
+   logToFile("ELLYPAY OUT -CHARGES",$request);
+
    $payresponse= Modules::run("ellypay/payment",$request);
-   file_put_contents(LOG_FILE, "\n ELLYPAY RESPONSE FINAL".$payresponse,FILE_APPEND);
+
+   logToFile("ELLYPAY RESPONSE FINAL".$payresponse);
 
    $this->pay_mdl->update($requestReference,$payresponse);
 
@@ -152,9 +154,9 @@ public function ezeeMoney($request){
    $request->setAmount($amt);
    $requestReference = $request->getRequestRef();
 
-   file_put_contents(LOG_FILE, "\n EZEE OUT -CHARGES".$request,FILE_APPEND);
+   logToFile(" EZEE OUT -CHARGES",$request);
    $payresponse= Modules::run("ezee/ezeePay",$request);
-   file_put_contents(LOG_FILE, "\n EZEE RESPONSE FINAL".$payresponse,FILE_APPEND);
+   logToFile("EZEE RESPONSE FINAL",$payresponse);
 
    $this->pay_mdl->update($requestReference,$payresponse);
 
@@ -235,11 +237,11 @@ public function interswitchPayment($request)
        $additionalParams.=$otp;
     }
 
-    file_put_contents(LOG_FILE, "\n PARAMS OUT ".$additionalParams,FILE_APPEND);
+    logToFile("PARAMS OUT ",$additionalParams);
 
     $final_trans_data=json_encode($transaction_data);
 
-   file_put_contents(LOG_FILE, "\n REQ OUT OUT ".$final_trans_data,FILE_APPEND);
+    logToFile("REQ OUT OUT ",$final_trans_data);
 
     $interswitchAuth=new InterswitchAuth();
 
@@ -257,7 +259,7 @@ public function interswitchPayment($request)
 
       $ch = curl_init($resourceUrl);
 
-      file_put_contents(LOG_FILE, "\n HEADERS OUT ".json_encode($request_headers),FILE_APPEND);
+      logToFile(" HEADERS OUT ",json_encode($request_headers));
 
        //post values
       curl_setopt($ch,CURLOPT_POSTFIELDS,$final_trans_data);
