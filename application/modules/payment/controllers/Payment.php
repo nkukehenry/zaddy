@@ -50,7 +50,7 @@ public function postPayment($request)
         Modules::run('cache/setStr','ROUTE_'.$paymentCode,$route);
     }
 
-    logToFile($route,"ROUTE PICKED");
+    log_data("ROUTE PICKED",$route);
 
 	if($this->pay_mdl->checkDoublePost($request)==true){
        return $this->duplicateDetected($request);
@@ -103,11 +103,11 @@ public function ellypay($request){
    $request->setAmount($amt);
    $requestReference = $request->getRequestRef();
 
-   logToFile("ELLYPAY OUT -CHARGES",$request);
+   log_data("ELLYPAY OUT -CHARGES",$request);
 
    $payresponse= Modules::run("ellypay/payment",$request);
 
-   logToFile("ELLYPAY RESPONSE FINAL".$payresponse);
+   log_data("ELLYPAY RESPONSE FINAL",$payresponse);
 
    $this->pay_mdl->update($requestReference,$payresponse);
 
@@ -148,15 +148,12 @@ public function ezeeMoney($request){
 
     }
 
-     
-
-
    $request->setAmount($amt);
    $requestReference = $request->getRequestRef();
 
-   logToFile(" EZEE OUT -CHARGES",$request);
+   log_data("EZEE OUT -CHARGES",$request);
    $payresponse= Modules::run("ezee/ezeePay",$request);
-   logToFile("EZEE RESPONSE FINAL",$payresponse);
+   log_data("EZEE RESPONSE FINAL",$payresponse);
 
    $this->pay_mdl->update($requestReference,$payresponse);
 
@@ -237,11 +234,11 @@ public function interswitchPayment($request)
        $additionalParams.=$otp;
     }
 
-    logToFile("PARAMS OUT ",$additionalParams);
+    log_data("PARAMS OUT ",$additionalParams);
 
     $final_trans_data=json_encode($transaction_data);
 
-    logToFile("REQ OUT OUT ",$final_trans_data);
+    log_data("REQ OUT OUT ",$final_trans_data);
 
     $interswitchAuth=new InterswitchAuth();
 
@@ -259,7 +256,7 @@ public function interswitchPayment($request)
 
       $ch = curl_init($resourceUrl);
 
-      logToFile(" HEADERS OUT ",json_encode($request_headers));
+      log_data(" HEADERS OUT ",json_encode($request_headers));
 
        //post values
       curl_setopt($ch,CURLOPT_POSTFIELDS,$final_trans_data);
