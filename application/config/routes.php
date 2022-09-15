@@ -57,3 +57,4 @@ $route['login']="auth/merchant";
 $route['admin']="auth/admin";
 $route['merchantBillers/(:any)/(:any)']="user/merchantBillers/$1/$2";
 $route['eService/(:any)']="user/user/merchantForm/$1";
+$route['callbacks/ellypay'] = "ellypay/handleCallback";

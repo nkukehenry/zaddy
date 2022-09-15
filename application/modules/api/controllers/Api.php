@@ -22,7 +22,7 @@ function __construct()
 
     public function validateCustomer(){
 
-       // $headers =  $_SERVER;
+       // $headers = request_headers();
         $headers = request_headers(); 
         $request=json_decode(file_get_contents('php://input')); //$this->input->post();
 
@@ -73,7 +73,7 @@ function __construct()
 
     public function validateAgent($agentNo){
 
-        //$headers =  $_SERVER;
+        //$headers = request_headers();
 		$headers = request_headers(); 
         logToFile($headers ,AGENT_IN_VAL." HEADERS");
 
@@ -238,7 +238,7 @@ function __construct()
 
     public function billerItems($billerId){
 
-        //$headers =  $_SERVER;
+        //$headers = request_headers();
 		$headers = request_headers(); 
         if(!$this->isAuthorized($headers)){ //chec app_key
             echo $this->getAuthError();
@@ -365,7 +365,7 @@ function __construct()
 
     public function setPin(){
 
-      //$headers =  $_SERVER;
+      //$headers = request_headers();
       $headers = request_headers(); 
       $request=json_decode(file_get_contents('php://input')); //
 
@@ -385,8 +385,8 @@ function __construct()
 
      public function setPassword(){
 
-       $headers =  $_SERVER;
-      $request=json_decode(file_get_contents('php://input')); //
+       $headers = request_headers();
+        $request=json_decode(file_get_contents('php://input')); //
 
        logToFile($headers ,"SET PASSWORD HEADERS");
        logToFile($request,"SET PASSWORD REQUEST");
