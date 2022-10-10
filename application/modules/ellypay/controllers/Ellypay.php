@@ -122,11 +122,13 @@ public function validate($request){
  $balance = 0;
 
    if(in_array($response->code,$success)){
+
      Modules::run("cache/setStr",$request->getRequestRef(),$response->data->validation_reference);
    	 $name = ($response->data->customer_name)?$response->data->customer_name:$response->data->account_name;
      $responseCode = "90000";
      $biller =   $response->data->product_name;
      $balance =  $response->data->balance_due;
+
    }
 
   $valresponse= array();
@@ -152,8 +154,8 @@ public function validate($request){
 public function payment($request){
      
      
-	 $payresponse= array(); //will contain the response
-     $paymentCode  = $request->getPaymentCode();
+	 $payresponse  = array(); //will contain the response
+   $paymentCode  = $request->getPaymentCode();
 	 $requestRef   = $request->getRequestRef();
     
      $pending = ["202","201"];
@@ -181,6 +183,7 @@ public function payment($request){
          $transferCode = $data->internal_reference;
          $token = ($data->details->token)?$data->details->token:$data->internal_reference;
      endif;
+
      }
 
      //Callback listener
@@ -215,13 +218,16 @@ public function payment($request){
          }
        
        	 $retries++;
+         
+         if($checkAgain)
        	 sleep(3);
        
        }while($checkAgain && $retries<8);
        
      }
      else if( !empty($response) && !in_array($response->code,$success)){
-    	$responseCode="90020";
+    	   
+         $responseCode="90020";
          $message = $response->message;
     }
 

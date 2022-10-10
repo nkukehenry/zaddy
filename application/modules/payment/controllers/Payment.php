@@ -62,19 +62,23 @@ public function postPayment($request)
 public function settleFloatLoan($ref){
 
     $this->db->where('requestRef',$ref);
-	$this->db->update('transactions',array('loan_settled'=>1));
+	  $this->db->update('transactions',array('loan_settled'=>1));
 
     echo "Loan settled successfully";
 }
 
 public function ellypay($request){
 
-	  $paymentCode = $request->getPaymentCode();
+	    $paymentCode = $request->getPaymentCode();
       $charges     = $this->pay_mdl->getCharges($paymentCode,$request->getAmount());
-      $ourCharge   = $charges->ourCharge;
-      $isInclusive = $charges->isInclusive;
-      $ourShare  = $charges->us;//amout of charge left for us to share with agent
-      $amt = $request->getAmount();
+      
+      if($charges){
+        
+        $ourCharge   = $charges->ourCharge;
+        $isInclusive = $charges->isInclusive;
+        $ourShare  = $charges->us;//amout of charge left for us to share with agent
+     
+        $amt = $request->getAmount();
 
 
       if($ourCharge > 0) {
@@ -88,6 +92,9 @@ public function ellypay($request){
                }
         }
 
+      }
+
+
     try{
      
       $save=$this->pay_mdl->save($request); //log to db & file
@@ -97,9 +104,9 @@ public function ellypay($request){
     }
     catch(mysqli_sql_exception $ex){
 
-      file_put_contents(LOG_FILE, "\n DB ERROR ".$ex,FILE_APPEND);
-
+      log_data("DB ERROR",$ex);
     }
+
    $request->setAmount($amt);
    $requestReference = $request->getRequestRef();
 
